@@ -1,0 +1,99 @@
+Tugas dragon Knight
+import java.util.Arrays;
+
+class dragonKnight {
+    public static void main(String[] args){
+        int knight[] = {7,8,4};
+        int dragon[] = {5,4};
+        Arrays.sort(knight);
+        Arrays.sort(dragon);
+        int indexDragon = 0;
+        int power = 0;
+        for (int i : knight){
+            if(indexDragon < dragon.length){
+                if(i >= dragon[indexDragon]){
+                    power += i;
+                    indexDragon++;
+                }
+            }
+        }
+        if(indexDragon == dragon.length){
+            System.out.println("minimum power = " + power);
+        }
+        else{
+            System.out.println("knight fall");
+        }
+    }
+}
+
+Tugas Binary 
+import java.io.*;
+
+public class Binary {
+    public static void main(String[] args) {
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            System.out.print("Input Number : ");
+            int index = 0;
+            int number = Integer.parseInt(input.readLine());
+            int[] binary = { 3, 5, 8, 11, 15, 23, 52, 66 };
+            int binaryLen = binary.length;
+            for (int x : binary) { 
+                if (number == x) {
+                    System.out.println("Number is in array at index " + index);
+                    break;
+                }
+                index++;
+            }
+            if (index == binaryLen) {
+                System.out.println("Number is not in array!");
+            }
+        } catch (IOException exception) {
+            System.out.println("Error input!");
+        }
+    }
+}
+
+Tugas Bilangan Prima
+import java.util.Scanner;
+
+public class Prima {
+    public static void main(String args[]){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Input angka : ");
+        int angka = input.nextInt();
+        int sisa = 0;
+
+        for (int i=2; i<=angka; i++) {
+            if (angka % i == 0) {
+                sisa++;
+            }
+        }
+        if (sisa==1){
+            System.out.println("Bilangan Prima");
+        }
+        else{
+            System.out.println("Bukan Bilangan Prima");
+        }
+    }
+}
+
+Tugas Ganjil Genap
+public class jilnap {
+        public static void main(String args[]){
+            long number[] ={1L, 2L, 3L, 1235L, 435L, 2638L};
+            System.out.print("Bilangan Genap : ");
+            for (int a=0; a< number.length;a++){
+                if (number[a]%2==0){
+                    System.out.print(number[a]+",");
+                }
+            }
+            System.out.println("  ");
+            System.out.print("Bilangan Ganjil : ");
+            for (int b=0; b<number.length;b++){
+                if(number[b]%2!=0){
+                    System.out.print(number[b]+",");
+                }
+            }
+        }
+    }
